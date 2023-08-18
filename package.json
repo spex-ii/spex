@@ -1,0 +1,11 @@
+{
+  "name": "spex",
+  "version": "1.0.0",
+  "description": "Copy boilerplates",
+  "main": "index.js",
+  "scripts": {
+    "spex": "node index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
