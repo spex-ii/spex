@@ -13,7 +13,6 @@ module.exports = function (args) {
         switch (command) {
             case '--install':
                 if (value) {
-                    console.log('Trying to install:', value);
                     const register = new Register()
                     register.installFile(value).updateRegister()
                 } else {
