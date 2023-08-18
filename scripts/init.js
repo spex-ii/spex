@@ -34,7 +34,7 @@ rl.question('Spex install directory: \x1b[90m(root)\x1b[0m ', (a1) => {
                 \ro Install directory: ${getValue(settings.installDir, 'root')}\n
                 \ro Other setting: ${getValue(settings.other, 'empty')}\n
                 \ro Different setting: ${getValue(settings.different, 'empty')}\n
-            \r///////////////////////////////////////////`)
+            \r///////////////////////////////////////////\n`)
             rl.question('Continue and install with this configuration? (y/n) \x1b[90m(yes)\x1b[0m ', (answer) => {
                 if (answer.toLowerCase() === 'y' || answer.toLowerCase() === 'yes' || answer === '') {
                     console.log('Great! Continuing...');

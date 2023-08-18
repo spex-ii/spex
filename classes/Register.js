@@ -20,6 +20,9 @@ class Register {
         if (!existsSync(this.sourceDir)) {
             console.error('Source directory does not exist. Try to run "spex -- --init".');
         } else {
+            if (!existsSync(config.rootDir)) {
+                mkdirSync(config.rootDir)
+            }
             if (existsSync(sourceFilePath)) {
                 if (!existsSync(this.targetDir)) {
                     mkdirSync(this.targetDir);
@@ -58,9 +61,11 @@ class Register {
 
         if (!hasContent) {
             register.src = [{ 'id': id }];
-            await writeFileAsync(registerPath, JSON.stringify(register, null, 2), 'utf-8');
-            console.log(`"${id}" added to register.json`);
+        } else {
+            register.src.push({ 'id': id })
         }
+        await writeFileAsync(registerPath, JSON.stringify(register, null, 2), 'utf-8');
+        console.log(`"${id}" added to register.json`);
     }
 }
 
